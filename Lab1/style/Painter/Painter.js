@@ -1,6 +1,6 @@
-import drawLineDAA from "./algorithm/daa.js"
-import drawLineBresenham from "./algorithm/bresenham.js";
-import drawCircleMidpoint from "./algorithm/midpoint.js"
+import drawLineDAA from "../algorithm/daa.js"
+import drawLineBresenham from "../algorithm/bresenham.js";
+import drawCircleMidpoint from "../algorithm/midpoint.js"
 class Painter {
     constructor() {
         this.canvas = document.getElementById("canvas");
@@ -129,18 +129,15 @@ class Painter {
     }
 
     handleMouseLeave() {
-        if (this.state != 0) {
-            this.state = 0;
-            this.points.push([this.algorithm,this.startPoint, this.endPoint]);
-            this.draw() ;
-        }
-
+        this.state = 0;
+        this.points.push([this.algorithm,this.startPoint, this.endPoint]);
+        this.draw() 
     }
     handleESCKey(event) {
         if (event.key === 'Escape'){
             this.state = 0 ;
             this.points.push([this.algorithm,this.startPoint, this.endPoint]);
-            this.draw() ;
+            this.draw() 
         }
     }
     handleReset() {

@@ -1,71 +1,107 @@
-body {
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+/* Global Styles */
+body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
-
+canvas {
+    border: 1px solid rgb(0, 0, 0) ;
+    cursor: crosshair;
+    background-color: rgba(245, 238, 229, 0.421);
+}
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h2 {
+    margin-bottom: 5px;
+}
+
+.title {
+    margin-top: 10px;
+}
+
+.author {
+    font-size: 14px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+aside {
+    flex: 1;
+    margin-right: 0px;
+    border: 1px solid black;
+
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styles for the tutorial section */
+.tutorial {
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-h2.title {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-select {
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
+.tutorial summary {
+    font-weight: bold;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.tutorial p {
+    margin-left: 20px;
 }
 
-canvas {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
+/* Styles for the controls section */
 .controls {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
     display: flex;
-    justify-content: space-between;
+}
+select {
+    width: auto;
+    border: 2px solid black;
 }
 
-.buttons {
-    margin-left: auto;
+
+
+
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+
 }
+
+button:hover {
+    background-color: #555;
+}
+
+

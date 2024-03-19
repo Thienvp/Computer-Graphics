@@ -4,31 +4,31 @@ function euclideanDistance(x1, y1, x2, y2) {
     const dy = y2 - y1;
     return Math.round(Math.sqrt(dx * dx + dy * dy)) ;
 }
-function drawCircleMidpoint( that, centerX, centerY, pX,pY, color) {
-    let x = euclideanDistance(centerX,centerY,pX,pY);
-    let y = 0;
-    let err = 0;
+function drawCircleMidpoint(that, x0, y0, x1, y1, color) {
+    let r = euclideanDistance(x0, y0, x1, y1);
+    let x = 0;
+    let y = r;
+    let f = 1 - r;
 
-    while (x >= y) {
-        that.setPixel(  centerX + x, centerY + y, color);
-        that.setPixel(  centerX + y, centerY + x, color);
-        that.setPixel(  centerX - y, centerY + x, color);
-        that.setPixel(  centerX - x, centerY + y, color);
-        that.setPixel(  centerX - x, centerY - y, color);
-        that.setPixel(  centerX - y, centerY - x, color);
-        that.setPixel(  centerX + y, centerY - x, color);
-        that.setPixel(  centerX + x, centerY - y, color);
+    while (x <= y) {
+        that.setPixel(x0 + x, y0 + y, color);
+        that.setPixel(x0 - x, y0 + y, color);
+        that.setPixel(x0 + x, y0 - y, color);
+        that.setPixel(x0 - x, y0 - y, color);
+        that.setPixel(x0 + y, y0 + x, color);
+        that.setPixel(x0 - y, y0 + x, color);
+        that.setPixel(x0 + y, y0 - x, color);
+        that.setPixel(x0 - y, y0 - x, color);
 
-        if (err <= 0) {
-            y += 1;
-            err += 2 * y + 1;
-        }
-
-        if (err > 0) {
-            x -= 1;
-            err -= 2 * x + 1;
+        x++;
+        if (f < 0) {
+            f += 2 * x + 1;
+        } else {
+            y--;
+            f += 2 * (x - y) + 1;
         }
     }
 }
-// Export the function
+
+
 export default drawCircleMidpoint;
