@@ -5,6 +5,7 @@ function euclideanDistance(x1, y1, x2, y2) {
     return Math.round(Math.sqrt(dx * dx + dy * dy)) ;
 }
 function drawCircleMidpoint(that, x0, y0, x1, y1, color) {
+    if (x0 == x1 && y0 == y1) return;
     let r = euclideanDistance(x0, y0, x1, y1);
     let x = 0;
     let y = r;
@@ -28,6 +29,7 @@ function drawCircleMidpoint(that, x0, y0, x1, y1, color) {
             f += 2 * (x - y) + 1;
         }
     }
+    // console.log(r, x0,y0)
 }
 
 

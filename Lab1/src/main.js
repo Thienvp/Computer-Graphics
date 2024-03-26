@@ -11,7 +11,7 @@ class Painter {
         this.state = 0;
 
         this.startPoint = {x: -1, y:-1};
-        this.endPoint = {x:-1 , y :-1};
+        this.endPoint = {x:-999 , y :-1999};
         this.algorithm = "daa" ; //breseham,midpoint
 
         this.points = []; // array : ["daa", {x:-1,y: -1}, {x: -1 , y : -1}]

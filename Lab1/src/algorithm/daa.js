@@ -2,7 +2,7 @@ function drawLineDDA (that,x0,y0,x1,y1,color) { // that là biến tham chiếu 
     let dx = x1 - x0;
     let dy = y1 - y0;
     if (dx==0 && dy ==0) return ;
-    if (Math.abs(dy) <= Math.abs(dx)) { // TH1: Nếu line tăng nhanh 
+    if (Math.abs(dy) <= Math.abs(dx)) { // TH1: Nếu line tăng chậm 
         if ( x0 > x1 ) {// Điểm đầu nằm bên phải => Đổi điểm
             let tx = x0 ; x0 = x1; x1 =tx ; 
             let ty = y0 ; y0 = y1 ; y1 = ty ; 
@@ -14,8 +14,8 @@ function drawLineDDA (that,x0,y0,x1,y1,color) { // that là biến tham chiếu 
             y += k ;
         }
     }
-    else { // Line tăng chậm 
-        if ( y0 > y1) { // TH2: Điểm đầu nằm bên trên => Đổi điểm
+    else { // TH2 - Line tăng nhanh 
+        if ( y0 > y1) { //  Điểm đầu nằm bên trên => Đổi điểm
             let tx = x0 ; x0 = x1 ; x1 = tx ;
             let ty = y0 ; y0 = y1 ; y1 = ty ;
         }
